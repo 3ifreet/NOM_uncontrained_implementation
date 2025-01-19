@@ -77,4 +77,4 @@ for i in range(100):
 new_model.eval()
 with torch.inference_mode():
     
-    print("solution at x = ", torch.matmul(input_value, new_model.new_layer.weight.T), "is ",new_model.old_model(torch.matmul(input_value, new_model.new_layer.weight.T)))
+    print("solution at x = ", torch.matmul(input_value, new_model.new_layer.weight.T)+new_model.new_layer.bias, "is ",new_model.old_model(torch.matmul(input_value, new_model.new_layer.weight.T)))
