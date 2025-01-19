@@ -76,11 +76,4 @@ for i in range(100):
 
 new_model.eval()
 with torch.inference_mode():
-    print("loss: ",loss.item())
-    print("output", new_model(input_value))
-    print("first layer into obj_fn: ", new_model.new_layer.weight.item(), new_model.new_layer.bias.item())
-    print(input_value)
-    # print(new_model.old_model(torch.matmul(input_value, new_model.new_layer.weight.T)))
-    # print(list(new_model.parameters()))
-    for x in list(new_model.parameters()):
-        print(x.size()) 
+    print(new_model.old_model(torch.matmul(input_value, new_model.new_layer.weight.T)))
